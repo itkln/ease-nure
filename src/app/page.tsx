@@ -1,10 +1,11 @@
-import Image from "next/image";
-import Button from "@/app/components/button/button";
+import Button from "@/components/button/button";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="">
+    <div className="h-screen">
       <Button title="Sign in" variant={"basic"}/>
     </div>
   );
 }
+
+export default Home;
