@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Logo from "@/assets/images/easeLogo.svg";
-import OtpForm from "@/app/(auth)/v1/verify/components/otp/input";
+import OtpForm from "@/app/(auth)/v1/auth/verify/components/otp/input";
 
 const Verify = () => {
     return (
