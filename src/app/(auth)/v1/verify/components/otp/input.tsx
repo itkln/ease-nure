@@ -48,7 +48,7 @@ const OtpForm = () => {
                             value={digit}
                             onChange={(e) => handleChange(i, e.target.value)}
                             onKeyDown={(e) => handleKeyDown(i, e)}
-                            className="border-b-2 w-[60px] h-[70px] text-center outline-none focus:border-[#84868b] transition-colors ease-in duration-300"
+                            className="border-b-2 w-[60px] h-[70px] text-center outline-none focus:border-[#84868b] transition-colors ease-in duration-200"
                             type="text"
                             maxLength={1}
                         />
