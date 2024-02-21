@@ -1,14 +1,12 @@
-import Button from "@/components/button/button";
-import InputField from "@/components/input/input";
 import Image from "next/image";
 import Logo from "@/assets/images/easeLogo.svg";
-import Link from "next/link";
+import OtpForm from "@/app/(auth)/v1/auth/verify/components/otp/input";
 
 const Verify = () => {
     return (
         <>
             <div className="header text-center text-xl space-y-5">
-                <Image className="inline" src={Logo} alt="Ease Logo" />
+                <Image className="inline" src={Logo} alt="Ease Logo"/>
                 <h1 className="header-title font-semibold">Enter Verification Code</h1>
             </div>
 
@@ -17,7 +15,7 @@ const Verify = () => {
                 Please enter received code to continue
             </p>
 
-            <Button title="Verify" variant={"basic"} />
+            <OtpForm />
         </>
     )
 }

@@ -8,13 +8,15 @@ const SignUp = () => {
     return (
         <>
             <div className="header text-center text-xl space-y-5">
-                <Image className="inline" src={Logo} alt="Ease Logo" />
+                <Image className="inline" src={Logo} alt="Ease Logo"/>
                 <h1 className="header-title font-semibold">Create Your Wallet</h1>
             </div>
 
-            <InputField label="E-mail Address" type="text" />
-            <InputField label="Name" type="text" />
-            <Button title="Create" variant={"basic"} />
+            <form className="space-y-5">
+                <InputField label="E-mail Address" type="text"/>
+                <InputField label="Name" type="text"/>
+                <Button title="Create" variant={"basic"}/>
+            </form>
 
             <p className="text-sm text-center">Registering implies consent for personal data processing.</p>
 
