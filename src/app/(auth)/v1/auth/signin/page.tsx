@@ -29,7 +29,7 @@ const SignIn = () => {
             </div>
 
             <form className="space-y-8" onSubmit={handleSignIn}>
-                <InputField label="E-mail Address" type="text"/>
+                <InputField label="E-mail Address" type="email"/>
                 <Button title="Sign In" variant={"basic"}/>
             </form>
 
