@@ -1,34 +1,30 @@
-import {apiClient} from "@/app/api/v1/receipts/api/receipt/api";
+import {gptClient, receiptClient} from "@/app/api/v1/receipts/api/receipt/api";
 
 interface IGetAll {
     timestamp: string
-    receipt: IReceipt[]
+    receipt: ReceiptFile[]
 }
 
-interface IUpload {
-    id: string
-    filename: string
-    filetype: string
-    current_status: string
-    timestamp: string
-}
-
-export type IReceipt = {
-    id: string
-    filename: string
-    current_status: string
-    filedata: ArrayBuffer
+interface IGetById {
+    receipt: ReceiptInfo
 }
 
 class ReceiptService {
     async getAll() {
-        return apiClient.get<IGetAll>("/receipts")
+        return receiptClient.get<IGetAll>("/receipts")
     }
 
     async upload(formData: FormData) {
-        return apiClient.post<any, any, FormData>('/receipts/upload', formData);
+        return receiptClient.post<any, any, FormData>('/receipts', formData);
     }
 
+    async getById(id: string) {
+        return gptClient.get<IGetById>(`/receipts/${id}`);
+    }
+
+    async approve(id: string, receiptInfo: ReceiptInfo) {
+        return receiptClient.post<any, any, ReceiptInfo>(`/receipts/${id}/approve`, receiptInfo);
+    }
 }
 
 export default new ReceiptService();
