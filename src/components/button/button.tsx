@@ -1,5 +1,5 @@
 const variantStyles: { [key: string]: string } = {
-  basic: 'py-[12px] w-full bg-[#0E1218] text-white rounded-[9px]'
+  basic: 'py-[8px] bg-[#0047D6] px-5 text-white text-[14px] rounded-[9px] hover:bg-[#0841B5] transition duration-200 ease-in'
 };
 
 interface ButtonProps {
