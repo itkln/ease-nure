@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import ReceiptService from '@/app/api/v1/receipts/services/receipt.service';
+import ReceiptService from '@/app/api/v1/receipts/service/receipt.service';
 
 const QUERY_KEY = 'receipts';
 

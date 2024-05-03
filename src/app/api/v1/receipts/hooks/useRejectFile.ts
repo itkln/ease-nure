@@ -1,18 +1,18 @@
 import {useMutation, useQueryClient} from "@tanstack/react-query";
 import ReceiptService from "@/app/api/v1/receipts/service/receipt.service";
 
-const useApproveFile = () => {
+const useRejectFile = () => {
     const queryClient = useQueryClient();
 
     return (
         useMutation({
-            mutationFn: (props: {id: string, receiptInfo: ReceiptInfo}) => ReceiptService.approve(props.id, props.receiptInfo),
+            mutationFn: (props: {id: string}) => ReceiptService.reject(props.id),
             onSuccess: (response) => {
-                console.log("File approving: ", response.data.id)
+                console.log("File rejected: ", response.data.id)
                 queryClient.invalidateQueries({queryKey: ['receipts']})
             }
         })
     );
 };
 
-export default useApproveFile;
+export default useRejectFile;

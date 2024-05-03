@@ -1,43 +1,34 @@
-import {
-    Button,
-    Chip,
-    Dropdown, DropdownItem, DropdownMenu,
-    DropdownTrigger, Table,
-    TableBody,
-    TableCell,
-    TableColumn,
-    TableHeader,
-    TableRow
-} from "@nextui-org/react";
+import React from 'react';
+import {setChipClassNames} from "@/app/api/v1/receipts/util/chipUtil";
+import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
+import {Badge} from "@/components/ui/badge";
 
 interface ITableActions {
     handleRemove?: (idx: number) => void
 }
 
-interface ITable {
+interface Props {
     columns: string[]
     rows: Receipt[]
     actions?: ITableActions
 }
 
-import React from 'react';
-import {DeleteOutline, MoreHorizRounded} from "@mui/icons-material";
-import {setChipClassNames} from "@/app/api/v1/receipts/util/chipUtil";
-
-const TableBuilder = (props: ITable) => {
+const TableBuilder = ({columns, rows, actions}: Props) => {
     return (
-        <Table removeWrapper radius="none" fullWidth shadow="none">
+        <Table>
             <TableHeader>
-                {props.columns.map((column: string, idx: number) => (
-                    <TableColumn key={idx} align="center">{column}</TableColumn>
+                {columns.map((column: string, idx: number) => (
+                    <TableHead className="text-center" key={idx}>{column}</TableHead>
                 ))}
             </TableHeader>
             <TableBody>
-                {props.rows.map((receipt: Receipt, idx: number) => (
+                {rows.map((receipt: Receipt, idx: number) => (
                     <TableRow key={idx}>
-                        <TableCell>{receipt.filename}</TableCell>
-                        <TableCell>{receipt.filetype}</TableCell>
-                        <TableCell><Chip className={setChipClassNames(receipt.status)}>{receipt.status}</Chip></TableCell>
+                        <TableCell className="text-center">{receipt.filename}</TableCell>
+                        <TableCell className="text-center">{receipt.filetype}</TableCell>
+                        <TableCell className="text-center">
+                            <Badge className={setChipClassNames(receipt.status)}>{receipt.status}</Badge>
+                        </TableCell>
                     </TableRow>
                 ))}
             </TableBody>

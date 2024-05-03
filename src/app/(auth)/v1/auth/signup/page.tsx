@@ -1,7 +1,7 @@
 "use client"
 
 import Button from "@/components/button/button";
-import InputField from "@/components/input/input";
+import LabelInput from "@/components/LabelInput";
 import Image from "next/image";
 import Logo from "@/assets/images/easeLogo.svg";
 import Link from "next/link";
@@ -30,8 +30,8 @@ const SignUp = () => {
             </div>
 
             <form className="space-y-5" onSubmit={handleSignUp}>
-                <InputField label="E-mail Address" type="email"/>
-                <InputField label="Name" type="text"/>
+                <LabelInput label="E-mail Address" type="email"/>
+                <LabelInput label="Name" type="text"/>
                 <Button title="Create" variant={"basic"}/>
             </form>
 

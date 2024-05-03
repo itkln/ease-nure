@@ -1,6 +1,6 @@
 import React from 'react';
 import {useMutation, useQueryClient} from "@tanstack/react-query";
-import ReceiptService from "@/app/api/v1/receipts/services/receipt.service";
+import ReceiptService from "@/app/api/v1/receipts/service/receipt.service";
 
 interface IFileUploadMutation {
     handleAdd: (receipt: Receipt | null) => void

@@ -11,7 +11,7 @@ interface FileUploadModalProps {
     onClose: () => void;
 }
 
-const FileUploadModal = ({isOpen, onClose}: FileUploadModalProps) => {
+const FileUploadDialog = ({isOpen, onClose}: FileUploadModalProps) => {
     const {receipts, setReceipts, handleAdd, handleRemove} = useFileAdd()
     const {mutate, isError, error} = useFileUpload({handleAdd})
     const {
@@ -50,12 +50,12 @@ const FileUploadModal = ({isOpen, onClose}: FileUploadModalProps) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed px-5 animate-fade animate-duration-[1500ms] animate-ease-in-out animate-alternate inset-0 backdrop-blur-sm h-full w-full z-50 transition-all duration-300 ease-in-out">
-            <div className="relative top-20 mx-auto p-5 border max-w-[630px] shadow-lg rounded-md bg-white">
+        <div className="fixed px-5 inset-0 backdrop-blur-sm h-full w-full z-50 transition-all duration-300 ease-in-out">
+            <div className="relative bg-background top-20 mx-auto p-5 border max-w-[630px] shadow-lg rounded-md">
                 <div className="upload-header flex justify-between items-center">
                     <h1 className="text-xl font-semibold">Upload files</h1>
                     <CloseRounded
-                        className="cursor-pointer hover:bg-gray-200 transition duration-200 px-[3px] border-2 border-solid rounded-md"
+                        className="cursor-pointer hover:bg-muted transition duration-200 px-[3px] border-2 border-solid rounded-md"
                         fontSize="medium" onClick={handleCloseModal}/>
                 </div>
                 <form
@@ -100,4 +100,4 @@ const FileUploadModal = ({isOpen, onClose}: FileUploadModalProps) => {
     );
 };
 
-export default FileUploadModal;
+export default FileUploadDialog;

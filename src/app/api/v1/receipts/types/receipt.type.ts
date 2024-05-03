@@ -11,7 +11,7 @@ type Receipt = Omit<ReceiptFile, "content">;
 interface Item {
     description: string;
     quantity: number;
-    unit_price: string;
+    unit_price: number;
     total_price: number;
 }
 

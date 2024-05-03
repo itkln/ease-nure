@@ -25,6 +25,10 @@ class ReceiptService {
     async approve(id: string, receiptInfo: ReceiptInfo) {
         return receiptClient.post<any, any, ReceiptInfo>(`/receipts/${id}/approve`, receiptInfo);
     }
+
+    async reject(id: string) {
+        return receiptClient.post<any, any, any>(`/receipts/${id}/reject`);
+    }
 }
 
 export default new ReceiptService();
