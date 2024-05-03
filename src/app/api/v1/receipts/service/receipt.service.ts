@@ -1,4 +1,5 @@
-import {gptClient, receiptClient} from "@/app/api/v1/receipts/api/receipt/api";
+import {receiptClient} from "@/app/api/v1/receipts/api/receipt/api";
+import {llmClient} from "@/app/api/v1/receipts/api/llm/api";
 
 interface IGetAll {
     timestamp: string
@@ -19,7 +20,7 @@ class ReceiptService {
     }
 
     async getById(id: string) {
-        return gptClient.get<IGetById>(`/receipts/${id}`);
+        return llmClient.get<IGetById>(`/receipts/${id}`);
     }
 
     async approve(id: string, receiptInfo: ReceiptInfo) {

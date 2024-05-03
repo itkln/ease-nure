@@ -1,6 +1,6 @@
 import React, {ReactNode, useEffect, useState} from 'react';
 import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from "@/components/ui/dialog";
-import ReceiptView from "@/app/api/v1/receipts/_components/view/ReceiptView";
+import ReceiptView from "@/app/api/v1/receipts/_components/ReceiptView";
 import {Badge} from "@/components/ui/badge";
 import {setChipClassNames} from "@/app/api/v1/receipts/util/chipUtil";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
